@@ -13,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Objects;
+
 
 @RestController
 @RequestMapping("api")
@@ -29,7 +31,11 @@ public class ApiController {
 
     @PostMapping("telemetri_gonder")
     public ResponseEntity<TelemetryResponse> sendTelemetry(@RequestBody TelemetrySender telemetrySender){
-        telemetrySender.setId(telemetrySender.getTakim_numarasi().longValue());
+
+        Long id = telemetrySenderRepository.getIdByTakimNo(telemetrySender.getTakim_numarasi());
+        if(Objects.nonNull(id)){
+            telemetrySender.setId(id);
+        }
         telemetrySenderRepository.save(telemetrySender);
         return new ResponseEntity(apiService.getTelemetryResponse(telemetrySender), HttpStatus.OK);
     }
