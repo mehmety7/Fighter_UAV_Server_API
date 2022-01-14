@@ -1,5 +1,4 @@
 C:\Users\Mehmety7\Desktop\Github\Fighter_UAV_Server_API\src\main\java\com\bam\fuavserver\model\entity\TelemetrySender.java
-C:\Users\Mehmety7\Desktop\Github\Fighter_UAV_Server_API\src\main\java\com\bam\fuavserver\repo\GPSClockRepository.java
 C:\Users\Mehmety7\Desktop\Github\Fighter_UAV_Server_API\src\main\java\com\bam\fuavserver\model\dto\LocationInfo.java
 C:\Users\Mehmety7\Desktop\Github\Fighter_UAV_Server_API\src\main\java\com\bam\fuavserver\model\entity\GPSSaati.java
 C:\Users\Mehmety7\Desktop\Github\Fighter_UAV_Server_API\src\main\java\com\bam\fuavserver\repo\CrashInfoRepository.java
@@ -8,6 +7,7 @@ C:\Users\Mehmety7\Desktop\Github\Fighter_UAV_Server_API\src\main\java\com\bam\fu
 C:\Users\Mehmety7\Desktop\Github\Fighter_UAV_Server_API\src\main\java\com\bam\fuavserver\model\entity\Login.java
 C:\Users\Mehmety7\Desktop\Github\Fighter_UAV_Server_API\src\main\java\com\bam\fuavserver\repo\LoginRepository.java
 C:\Users\Mehmety7\Desktop\Github\Fighter_UAV_Server_API\src\main\java\com\bam\fuavserver\controller\ApiController.java
+C:\Users\Mehmety7\Desktop\Github\Fighter_UAV_Server_API\src\main\java\com\bam\fuavserver\repo\GPSSaatiRepository.java
 C:\Users\Mehmety7\Desktop\Github\Fighter_UAV_Server_API\src\main\java\com\bam\fuavserver\model\entity\Crash.java
 C:\Users\Mehmety7\Desktop\Github\Fighter_UAV_Server_API\src\main\java\com\bam\fuavserver\FuavserverApplication.java
 C:\Users\Mehmety7\Desktop\Github\Fighter_UAV_Server_API\src\main\java\com\bam\fuavserver\model\dto\ServerClock.java

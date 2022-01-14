@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.bam.fuavserver.FuavserverApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.295 s - in com.bam.fuavserver.FuavserverApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.014 s - in com.bam.fuavserver.FuavserverApplicationTests

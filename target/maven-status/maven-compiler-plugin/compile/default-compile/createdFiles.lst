@@ -9,9 +9,9 @@ com\bam\fuavserver\model\entity\Login.class
 com\bam\fuavserver\model\dto\LocationInfo.class
 com\bam\fuavserver\model\dto\ServerClock.class
 com\bam\fuavserver\FuavserverApplication.class
-com\bam\fuavserver\repo\GPSClockRepository.class
 com\bam\fuavserver\service\ApiService.class
 com\bam\fuavserver\model\entity\GPSSaati.class
 com\bam\fuavserver\repo\CrashInfoRepository.class
 com\bam\fuavserver\model\response\TelemetryResponse.class
+com\bam\fuavserver\repo\GPSSaatiRepository.class
 com\bam\fuavserver\model\entity\TelemetrySender.class
