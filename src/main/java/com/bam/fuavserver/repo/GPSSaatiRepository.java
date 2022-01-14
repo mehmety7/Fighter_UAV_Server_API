@@ -2,6 +2,9 @@ package com.bam.fuavserver.repo;
 
 import com.bam.fuavserver.model.entity.GPSSaati;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface GPSClockRepository extends JpaRepository<GPSSaati, Long> {
+@Repository
+public interface GPSSaatiRepository extends JpaRepository<GPSSaati, Long> {
+
 }

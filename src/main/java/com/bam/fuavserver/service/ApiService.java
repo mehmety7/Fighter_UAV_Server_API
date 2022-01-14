@@ -2,15 +2,9 @@ package com.bam.fuavserver.service;
 
 import com.bam.fuavserver.model.dto.LocationInfo;
 import com.bam.fuavserver.model.dto.ServerClock;
-import com.bam.fuavserver.model.entity.Crash;
-import com.bam.fuavserver.model.entity.CrashInfo;
-import com.bam.fuavserver.model.entity.Login;
-import com.bam.fuavserver.model.entity.TelemetrySender;
+import com.bam.fuavserver.model.entity.*;
 import com.bam.fuavserver.model.response.TelemetryResponse;
-import com.bam.fuavserver.repo.CrashInfoRepository;
-import com.bam.fuavserver.repo.CrashRepository;
-import com.bam.fuavserver.repo.LoginRepository;
-import com.bam.fuavserver.repo.TelemetrySenderRepository;
+import com.bam.fuavserver.repo.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,12 +21,16 @@ public class ApiService {
     private final CrashInfoRepository crashInfoRepository;
     private final CrashRepository crashRepository;
     private final LoginRepository loginRepository;
+    private final GPSSaatiRepository gpsSaatiRepository;
 
     public TelemetryResponse getTelemetryResponse(TelemetrySender telemetrySender){
         List<TelemetrySender> telemetries = telemetrySenderRepository.findAll();
         TelemetryResponse telemetryResponse = new TelemetryResponse();
         List<LocationInfo> locationInfoList = new ArrayList<>();
         for(int i = 0; i < telemetries.size(); i++){
+            if(telemetrySender.getTakim_numarasi().equals(telemetries.get(i).getTakim_numarasi())){
+                continue;
+            }
             LocationInfo locationInfo = new LocationInfo();
             locationInfo.setIha_irtifa(telemetries.get(i).getIHA_irtifa());
             locationInfo.setIha_enlem(telemetries.get(i).getIHA_enlem());
@@ -48,6 +46,24 @@ public class ApiService {
         telemetryResponse.setKonumBilgileri(locationInfoList);
         telemetryResponse.setSistemSaati(new ServerClock());
         return telemetryResponse;
+    }
+
+    @Transactional
+    public void saveTelemetryResponse(TelemetrySender telemetrySender){
+        Long id = telemetrySenderRepository.getIdByTakimNo(telemetrySender.getTakim_numarasi());
+        if (Objects.nonNull(id)){
+            GPSSaati gpsSaati = telemetrySender.getGPSSaati();
+            gpsSaati.setId(id);
+            gpsSaatiRepository.save(gpsSaati);
+            telemetrySender.setId(id);
+            telemetrySenderRepository.save(telemetrySender);
+        }else {
+            GPSSaati gpsSaati = telemetrySender.getGPSSaati();
+            GPSSaati newGpsSaati = gpsSaatiRepository.save(gpsSaati);
+            Long newId = newGpsSaati.getId();
+            telemetrySender.setId(newId);
+            telemetrySenderRepository.save(telemetrySender);
+        }
     }
 
     public Boolean login(Login login){

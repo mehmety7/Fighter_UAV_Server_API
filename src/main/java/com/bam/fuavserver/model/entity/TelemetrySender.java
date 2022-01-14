@@ -49,7 +49,7 @@ public class TelemetrySender extends BaseEntity {
     @JsonAlias("Hedef_yukseklik")
     private Double Hedef_yukseklik;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JsonAlias("GPSSaati")
     private GPSSaati GPSSaati;
 }

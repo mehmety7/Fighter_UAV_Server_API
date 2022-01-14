@@ -31,12 +31,7 @@ public class ApiController {
 
     @PostMapping("telemetri_gonder")
     public ResponseEntity<TelemetryResponse> sendTelemetry(@RequestBody TelemetrySender telemetrySender){
-
-        Long id = telemetrySenderRepository.getIdByTakimNo(telemetrySender.getTakim_numarasi());
-        if(Objects.nonNull(id)){
-            telemetrySender.setId(id);
-        }
-        telemetrySenderRepository.save(telemetrySender);
+        apiService.saveTelemetryResponse(telemetrySender);
         return new ResponseEntity(apiService.getTelemetryResponse(telemetrySender), HttpStatus.OK);
     }
 
