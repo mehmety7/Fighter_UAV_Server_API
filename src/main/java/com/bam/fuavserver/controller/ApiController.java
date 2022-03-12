@@ -5,15 +5,11 @@ import com.bam.fuavserver.model.entity.CrashInfo;
 import com.bam.fuavserver.model.entity.Login;
 import com.bam.fuavserver.model.entity.TelemetrySender;
 import com.bam.fuavserver.model.response.TelemetryResponse;
-import com.bam.fuavserver.repo.*;
 import com.bam.fuavserver.service.ApiService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Objects;
 
 
 @RestController
@@ -21,7 +17,6 @@ import java.util.Objects;
 @RequiredArgsConstructor
 public class ApiController {
 
-    private final TelemetrySenderRepository telemetrySenderRepository;
     private final ApiService apiService;
 
     @GetMapping("sunucusaati")
