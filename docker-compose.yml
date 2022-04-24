@@ -3,6 +3,8 @@ version: '2'
 services:
   fuavserver:
     image: 'fuavserver:latest'
+    environment:
+      TZ: "Europe/Istanbul"
     build:
       context: .
     container_name: fuavserver

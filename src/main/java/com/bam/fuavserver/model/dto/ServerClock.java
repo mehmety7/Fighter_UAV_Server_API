@@ -17,7 +17,7 @@ public class ServerClock {
 
     public ServerClock(){
         Calendar time = Calendar.getInstance();
-        saat = time.get(Calendar.HOUR);
+        saat = time.get(Calendar.HOUR_OF_DAY);
         dakika = time.get(Calendar.MINUTE);
         saniye = time.get(Calendar.SECOND);
         milisaniye = time.get(Calendar.MILLISECOND);

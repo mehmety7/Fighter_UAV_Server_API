@@ -1,8 +1,7 @@
 package com.bam.fuavserver.model.response;
 
-import com.bam.fuavserver.model.dto.ServerClock;
 import com.bam.fuavserver.model.dto.LocationInfo;
-import com.fasterxml.jackson.annotation.JsonAlias;
+import com.bam.fuavserver.model.dto.ServerClock;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
